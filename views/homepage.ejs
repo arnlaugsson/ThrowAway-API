@@ -1,68 +1,62 @@
 <h1>Throwaway API - for anything and nothing</h1>
-
-<p>a <a href="http://sailsjs.or">Sails</a> application. This App exposes two models, through an CRUD API
+<p>a <a href="http://sailsjs.or">Sails</a> application.</p>
+<p>This App exposes two models, through an CRUD API
 (no authentication, no hassle). The existing models are called <code>games</code> and
 <code>misc</code>. They have no predefined attributes and can be used as needed.</p>
-
-<h2>How to use locally</h2>
-
+<p><img src="images/trash.png" alt="ThrowAwayAPI" /></p>
+<h3>Table of Contents</h3>
+<ol>
+<li><a href="#local">How to setup and run locally.</a></li>
+<li><a href="#heroku">Deploy to Heroku</a></li>
+<li><a href="#crud">CRUD operations</a></li>
+</ol>
+<h2><a name="local"></a>How to use locally</h2>
 <p>This assumes you have installed <a href="http://sailsjs.or">Sails</a>.</p>
-
-<ol><li><p>In the project&#39;s directory, start the application:</p><p>sails lift</p></li><li><p>You will be asked how to deal with migrations, for throwaway data, it
-shouldn&#39;t matter, just enter <code>1</code>.</p></li><li>The App should now be running locally on port 1337, head over to
-<a href="http://localhost:1337">the App</a></li></ol>
-
-<h3>View list</h3>
-
-<p>GET <a href="http://localhost:1337/misc">http://localhost:1137/misc</a></p>
-
-<p>Using cUrl:</p>
-
-<p><code>
-curl -X GET -H &quot;Content-Type: application/json&quot; &quot;http://localhost:1337/misc/&quot;
-</code></p>
-
-<h3>View single (by ID)</h3>
-
-<p>GET <a href="http://localhost:1337/misc/ID/">http://localhost:1137/misc/ID/</a></p>
-
-<p>Using cUrl:</p>
-
-<p><code>
-curl -X GET -H &quot;Content-Type: application/json&quot; &quot;http://localhost:1337/misc/ID/&quot;
-</code></p>
-
-<h3>Create</h3>
-
-<p>POST <code>http://localhost:1337/misc/create/?someAttribute=whatever</code></p>
-
-<p><code>
-curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{ &quot;someKey&quot;: &quot;someValue&quot; }&#39; &quot;http://localhost:1337/misc/create&quot;
-</code></p>
-
-<h3>Update existing (by ID)</h3>
-
-<p>PATCH <code>http://localhost:1337/misc/update/ID/?newAttr=someValue</code></p>
-
-<p>Using cUrl:</p>
-
-<p><code>
-curl -X PATCH -H &quot;Content-Type: application/json&quot; -d &#39;{ &quot;silly&quot;: &quot;LoveSongs&quot; }&#39; &quot;http://localhost:1337/misc/update/ID&quot;
-</code></p>
-
-<h3>Delete existing (by ID)</h3>
-
-<p>DELETE <code>http://localhost:1337/misc/ID</code></p>
-
-<p>Using cUrl:</p>
-
-<p><code>
-curl -X DELETE &quot;http://localhost:1337/misc/update/ID&quot;
-</code></p>
-
-<h2>Deploy an instance to Heroku</h2>
-
-<p>This assumes you have installed <a href="https://devcenter.heroku.com/articles/heroku-cli">Heroku&#39;s CLI</a>, and that you are
+<ol>
+<li><p>In the project’s directory, start the application:</p>
+<p><code>sails lift</code></p></li>
+<li><p>You will be asked how to deal with migrations, for throwaway data, it
+shouldn’t matter, just enter <code>1</code>.</p></li>
+<li><p>The App should now be running locally on port 1337, head over to
+<a href="http://localhost:1337">the App</a></p></li>
+</ol>
+<h2><a name="deploy"></a>Deploy an instance to Heroku</h2>
+<p>This assumes you have installed <a href="https://devcenter.heroku.com/articles/heroku-cli">Heroku’s CLI</a>, and that you are
 logged into your account.</p>
-
-<ol><li><p>In the project&#39;s directory, create an Heroku App:</p><p>heroku apps:create</p></li><li><p>Deploy the project as the App:</p><p>git push heroku master</p></li><li><p>Open the App for inspection:</p><p>heroku open</p></li><li><p>That&#39;s it. Happy prototyping.</p></li><li>Data is cleared out on Heroku sleep for the App.</li></ol>
+<ol>
+<li><p>In the project’s directory, create an Heroku App:</p>
+<p><code>heroku apps:create</code></p></li>
+<li><p>Deploy the project as the App:</p>
+<p><code>git push heroku master</code></p></li>
+<li><p>Open the App for inspection:</p>
+<p><code>heroku open</code></p></li>
+<li><p>That’s it. Happy prototyping.</p></li>
+<li><p>Data is cleared out on Heroku sleep for the App.</p></li>
+</ol>
+<h2><a name="crud"></a>Create, Read, Update and Delete</h2>
+<p>Assuming you are running locally, otherwise swap out <code>http://localhost:1337</code>
+for whatever URL your deployed Heroku version is running on.</p>
+<h3>View list</h3>
+<p>GET <a href="http://localhost:1337/misc">http://localhost:1137/misc</a></p>
+<p>Using cUrl:</p>
+<pre><code>curl -X GET -H &quot;Content-Type: application/json&quot; &quot;http://localhost:1337/misc/&quot;
+</code></pre>
+<h3>View single (by ID)</h3>
+<p>GET <a href="http://localhost:1337/misc/ID/">http://localhost:1137/misc/ID/</a></p>
+<p>Using cUrl:</p>
+<pre><code>curl -X GET -H &quot;Content-Type: application/json&quot; &quot;http://localhost:1337/misc/ID/&quot;
+</code></pre>
+<h3>Create</h3>
+<p>POST <code>http://localhost:1337/misc/create/?someAttribute=whatever</code></p>
+<pre><code>curl -X POST -H &quot;Content-Type: application/json&quot; -d '{ &quot;someKey&quot;: &quot;someValue&quot; }' &quot;http://localhost:1337/misc/create&quot;
+</code></pre>
+<h3>Update existing (by ID)</h3>
+<p>PATCH <code>http://localhost:1337/misc/update/ID/?newAttr=someValue</code></p>
+<p>Using cUrl:</p>
+<pre><code>curl -X PATCH -H &quot;Content-Type: application/json&quot; -d '{ &quot;silly&quot;: &quot;LoveSongs&quot; }' &quot;http://localhost:1337/misc/update/ID&quot;
+</code></pre>
+<h3>Delete existing (by ID)</h3>
+<p>DELETE <code>http://localhost:1337/misc/ID</code></p>
+<p>Using cUrl:</p>
+<pre><code>curl -X DELETE &quot;http://localhost:1337/misc/update/ID&quot;
+</code></pre>
