@@ -10,7 +10,55 @@
 
 <ol><li><p>In the project&#39;s directory, start the application:</p><p>sails lift</p></li><li><p>You will be asked how to deal with migrations, for throwaway data, it
 shouldn&#39;t matter, just enter <code>1</code>.</p></li><li>The App should now be running locally on port 1337, head over to
-<a href="http://localhost:1337">the App</a></li><li>Both of the models are exposed:<ul><li>[http://localhost:1337/games][http://localhost:1337/games]</li><li>[http://localhost:1137/misc][http://localhost:1337/misc]</li></ul></li><li>To create an instance of either send a POST request to:<ul><li><code>http://localhost:1337/MODEL/create/?someAttribute=whatever</code></li></ul></li><li>To update:<ul><li><code>http://localhost:1337/MODEL/update/1/?someAttribute=somethingElse</code></li></ul></li><li>To delete:<ul><li><code>http://localhost:1337/MODEL/destroy/1/</code></li></ul></li></ol>
+<a href="http://localhost:1337">the App</a></li></ol>
+
+<h3>View list</h3>
+
+<p>GET <a href="http://localhost:1337/misc">http://localhost:1137/misc</a></p>
+
+<p>Using cUrl:</p>
+
+<p><code>
+curl -X GET -H &quot;Content-Type: application/json&quot; &quot;http://localhost:1337/misc/&quot;
+</code></p>
+
+<h3>View single (by ID)</h3>
+
+<p>GET <a href="http://localhost:1337/misc/ID/">http://localhost:1137/misc/ID/</a></p>
+
+<p>Using cUrl:</p>
+
+<p><code>
+curl -X GET -H &quot;Content-Type: application/json&quot; &quot;http://localhost:1337/misc/ID/&quot;
+</code></p>
+
+<h3>Create</h3>
+
+<p>POST <code>http://localhost:1337/misc/create/?someAttribute=whatever</code></p>
+
+<p><code>
+curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{ &quot;someKey&quot;: &quot;someValue&quot; }&#39; &quot;http://localhost:1337/misc/create&quot;
+</code></p>
+
+<h3>Update existing (by ID)</h3>
+
+<p>PATCH <code>http://localhost:1337/misc/update/ID/?newAttr=someValue</code></p>
+
+<p>Using cUrl:</p>
+
+<p><code>
+curl -X PATCH -H &quot;Content-Type: application/json&quot; -d &#39;{ &quot;silly&quot;: &quot;LoveSongs&quot; }&#39; &quot;http://localhost:1337/misc/update/ID&quot;
+</code></p>
+
+<h3>Delete existing (by ID)</h3>
+
+<p>DELETE <code>http://localhost:1337/misc/ID</code></p>
+
+<p>Using cUrl:</p>
+
+<p><code>
+curl -X DELETE &quot;http://localhost:1337/misc/update/ID&quot;
+</code></p>
 
 <h2>Deploy an instance to Heroku</h2>
 
