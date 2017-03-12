@@ -15,16 +15,50 @@ This assumes you have installed [Sails][sails].
 shouldn't matter, just enter `1`.
 3. The App should now be running locally on port 1337, head over to
 [the App][app]
-4. Both of the models are exposed:
-    - [http://localhost:1337/games][http://localhost:1337/games]
-    - [http://localhost:1137/misc][http://localhost:1337/misc]
-5. To create an instance of either send a POST request to:
-    - `http://localhost:1337/MODEL/create/?someAttribute=whatever`
-6. To update:
-    - `http://localhost:1337/MODEL/update/1/?someAttribute=somethingElse`
-7. To delete:
-    - `http://localhost:1337/MODEL/destroy/1/`
 
+### View list
+GET [http://localhost:1137/misc](http://localhost:1337/misc)
+
+Using cUrl:
+
+```
+curl -X GET -H "Content-Type: application/json" "http://localhost:1337/misc/"
+```
+
+### View single (by ID)
+GET [http://localhost:1137/misc/ID/](http://localhost:1337/misc/ID/)
+
+Using cUrl:
+
+```
+curl -X GET -H "Content-Type: application/json" "http://localhost:1337/misc/ID/"
+```
+
+
+### Create
+POST `http://localhost:1337/misc/create/?someAttribute=whatever`
+
+```
+curl -X POST -H "Content-Type: application/json" -d '{ "someKey": "someValue" }' "http://localhost:1337/misc/create"
+```
+
+### Update existing (by ID)
+PATCH `http://localhost:1337/misc/update/ID/?newAttr=someValue`
+
+Using cUrl:
+
+```
+curl -X PATCH -H "Content-Type: application/json" -d '{ "silly": "LoveSongs" }' "http://localhost:1337/misc/update/ID"
+```
+
+### Delete existing (by ID)
+DELETE `http://localhost:1337/misc/ID`
+
+Using cUrl:
+
+```
+curl -X DELETE "http://localhost:1337/misc/update/ID"
+```
 
 ## Deploy an instance to Heroku
 This assumes you have installed [Heroku's CLI][heroku-cli], and that you are
