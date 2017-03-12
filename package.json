@@ -1,8 +1,8 @@
 {
-  "name": "bragur",
+  "name": "throwaway-api",
   "private": true,
   "version": "0.0.0",
-  "description": "a Sails application",
+  "description": "An expendible API for anything",
   "keywords": [],
   "dependencies": {
     "ejs": "2.3.4",
@@ -30,8 +30,8 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/arnlaugsson/bragur.git"
+    "url": "git://github.com/arnlaugsson/throwaway-api.git"
   },
   "author": "arnlaugsson",
-  "license": ""
+  "license": "MIT"
 }
