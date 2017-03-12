@@ -3,7 +3,6 @@ a [Sails][sails] application. This App exposes two models, through an CRUD API
 (no authentication, no hassle). The existing models are called `games` and
 `misc`. They have no predefined attributes and can be used as needed.
 
-
 ## How to use locally
 This assumes you have installed [Sails][sails].
 
@@ -77,6 +76,7 @@ logged into your account.
     heroku open
 
 4. That's it. Happy prototyping.
+5. Data is cleared out on Heroku sleep for the App.
 
 [sails]: http://sailsjs.or
 [heroku-cli]: https://devcenter.heroku.com/articles/heroku-cli
