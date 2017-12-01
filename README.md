@@ -5,9 +5,7 @@ This App exposes two models, through an CRUD API
 (no authentication, no hassle). The existing models are called `games` and
 `misc`. They have no predefined attributes and can be used as needed.
 
-![ThrowAwayAPI][trash]
-
-[trash]: images/trash.png
+![ThrowAwayAPI](images/trash.png)
 
 ### Table of Contents
 1. [How to setup and run locally.](#local)
@@ -15,7 +13,9 @@ This App exposes two models, through an CRUD API
 3. [CRUD operations](#crud)
 
 ## <a name="local"></a>How to use locally
-This assumes you have installed [Sails][sails].
+This assumes you have installed [Sails][sails], but if you don't; run:
+
+`npm install -g sails`
 
 1. In the project's directory, start the application:
 
