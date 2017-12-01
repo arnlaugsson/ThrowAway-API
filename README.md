@@ -5,7 +5,7 @@ This App exposes two models, through an CRUD API
 (no authentication, no hassle). The existing models are called `games` and
 `misc`. They have no predefined attributes and can be used as needed.
 
-![ThrowAwayAPI](images/trash.png)
+![ThrowAwayAPI](assets/images/trash.png)
 
 ### Table of Contents
 1. [How to setup and run locally.](#local)
